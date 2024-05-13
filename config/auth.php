@@ -14,6 +14,16 @@ return [
     */
 
     'defaults' => [
+        'admin' => [
+            'driver' => 'session',
+            'provider' => 'admins',
+        ],
+
+        'company' => [
+            'driver' => 'session',
+            'provider' => 'companies',
+        ],
+
         'guard' => 'web',
         'passwords' => 'users',
     ],
@@ -60,6 +70,16 @@ return [
     */
 
     'providers' => [
+        'admins' => [
+            'driver' => 'eloquent',
+            'model' => App\Models\Admin::class,
+        ],
+
+        'companies' => [
+            'driver' => 'eloquent',
+            'model' => App\Models\Company::class,
+        ],
+
         'users' => [
             'driver' => 'eloquent',
             'model' => App\Models\User::class,
